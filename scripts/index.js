@@ -10,9 +10,19 @@ allRides.forEach(async ([id, value])=>{
 
     const itemElement = document.createElement("li")
     itemElement.id = ride.id
+    itemElement.className = "d-flex p-1 align-itens-center justify-content- shadow-sm gap-3"
+
+    const mapElement = document.createElement("div")
+    mapElement.style = "width:100px;height:100px;"
+    mapElement.classList.add("bg-secondary")
+    mapElement.classList.add("rounded-4")
+
+    const dataElement = document.createElement("div")
+    dataElement.className = "flex-fill d-flex flex-column"
 
     const cityDiv = document.createElement("div")
     cityDiv.innerText = `${firstLocationData.city} - ${firstLocationData.countryCode}`
+    cityDiv.className = "text-primary mb-2"
 
     const maxSpeedDiv = document.createElement("div")
     maxSpeedDiv.innerText = `Max speed: ${getMaxSpeed(ride.data)} Km/h`
@@ -26,11 +36,15 @@ allRides.forEach(async ([id, value])=>{
     const dateDiv = document.createElement("div")
     dateDiv.innerText = getStartDate(ride)
 
-    itemElement.appendChild(cityDiv)
-    itemElement.appendChild(maxSpeedDiv)
-    itemElement.appendChild(distanceDiv)
-    itemElement.appendChild(durationRideDiv)
-    itemElement.appendChild(dateDiv)
+    dataElement.appendChild(cityDiv)
+    dataElement.appendChild(maxSpeedDiv)
+    dataElement.appendChild(distanceDiv)
+    dataElement.appendChild(durationRideDiv)
+    dataElement.appendChild(dateDiv)
+
+    itemElement.appendChild(mapElement)
+    itemElement.appendChild(dataElement)
+
     rdieListElement.appendChild(itemElement)
 })
 
