@@ -23,7 +23,7 @@ allRides.forEach(async ([id, value])=>{
     const durationRideDiv = document.createElement("div")
     durationRideDiv.innerText = getDurationRide(ride)
 
-    const dateDiv = = document.createElement("div")
+    const dateDiv = document.createElement("div")
     dateDiv.innerText = getStartDate(ride)
 
     itemElement.appendChild(cityDiv)
